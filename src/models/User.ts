@@ -1,13 +1,6 @@
 import {DataTypes, Model} from "sequelize";
 import sequelize from "../config/database";
-
-interface IUserAttributes {
-    id?: string;
-    username: string;
-    email: string;
-    password: string;
-    role: 'user' | 'admin';
-}
+import {IUserAttributes} from "../interfaces/IUserAttributes";
 
 class User extends Model<IUserAttributes> implements IUserAttributes {
     public id!: string;
@@ -40,6 +33,7 @@ User.init(
         },
         role: {
             type: DataTypes.ENUM,
+            values: ['user', 'admin'],
             defaultValue: "user",
         },
     },
@@ -49,5 +43,4 @@ User.init(
         timestamps: true,
     }
 );
-
 export default User;
