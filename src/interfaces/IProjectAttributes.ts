@@ -1,4 +1,4 @@
-export interface ProjectAttributes {
+export interface IProjectAttributes {
     id?: number;
     name: string;
     description: string;
