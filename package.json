@@ -4,8 +4,9 @@
   "description": "A collaborative task and project manager built using typescript and express",
   "main": "index.js",
   "scripts": {
-    "comp": "tsc",
-    "dev": "tsc && node dist/app.js"
+    "compile": "tsc",
+    "compose": "docker compose up -d",
+    "dev": "docker compose up -d && tsc && nodemon dist/app.js"
   },
   "keywords": [],
   "author": "",
