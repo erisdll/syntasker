@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import authRoutes from './routes/authRoutes';
 import projectRoutes from './routes/projectRoutes';
 import taskRoutes from './routes/taskRoutes';
-import * as fs from "node:fs";
 
 dotenv.config();
 
