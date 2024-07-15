@@ -24,7 +24,7 @@ Task.init(
             allowNull: false,
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1000),
         },
         status: {
             type: DataTypes.ENUM,

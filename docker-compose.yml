@@ -5,13 +5,13 @@ services:
     image: postgres:latest
     container_name: postgres_container
     environment:
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: pgpass
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: syntasker
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: always
 
   adminer:
     image: adminer
@@ -28,6 +28,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    restart: always
 
   mongo-express:
     image: mongo-express
@@ -37,6 +38,8 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongo
     ports:
       - "8081:8081"
+    depends_on:
+      - mongo
 
 volumes:
   postgres_data:

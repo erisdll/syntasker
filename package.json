@@ -4,9 +4,10 @@
   "description": "A collaborative task and project manager built using typescript and express",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc",
+    "build": "tsc",
     "compose": "docker compose up -d",
-    "dev": "docker compose up -d && tsc && nodemon dist/app.js"
+    "start:dev": "concurrently \"npm run compose\" \"nodemon\"",
+    "watch": "nodemon"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +35,9 @@
     "@types/sequelize": "^4.28.20",
     "@types/winston": "^2.4.4",
     "chai": "^5.1.1",
+    "concurrently": "^8.2.2",
     "mocha": "^10.6.0",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.3"
   }
