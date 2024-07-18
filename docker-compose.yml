@@ -5,7 +5,8 @@ services:
     image: postgres:latest
     container_name: postgres_container
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
       POSTGRES_DB: syntasker
     ports:
       - "5432:5432"
