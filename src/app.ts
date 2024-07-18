@@ -18,7 +18,7 @@ syntasker
     .use('/api/tasks', taskRoutes)
     .use('/api/comments', commentRoutes);
 
-syntasker.use((error: Error, request: Request, response: Response, next: NextFunction): void => {
+syntasker.use((error: Error, request: Request, response: Response): void => {
     console.error(error.stack);
     response.status(500).send({'error': 'Internal Server Error'});
 });
